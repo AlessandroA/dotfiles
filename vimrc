@@ -115,6 +115,9 @@ let g:instant_markdown_script = "~/.vim/vim-instant-markdown_chrome.applescript"
 """ vim-better-whitespace
 let g:strip_whitespace_on_save = 1
 
+""" vim-gitgutter
+let g:gitgutter_max_signs = 1000        " max number of signs in real-time diff
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Miscellaneous
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
