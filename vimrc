@@ -50,6 +50,9 @@ nmap <Space> <Plug>(easymotion-bd-w)
 let g:EasyMotion_smartcase = 1                          " smart case as in vim
 let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj'    " kb-layout-friendly
 
+""" supertab - include dash '-'
+set iskeyword+=-
+
 """ supertab - prevent unwanted tabs
 let g:SuperTabNoCompleteAfter = [
     \ '^', ',', '\s', ';', "\'", '"', '>', ')', ':', '/', '%', '#'
