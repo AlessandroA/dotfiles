@@ -8,3 +8,8 @@
 !.zshrc
 !.oh-my-zsh-custom
 !.oh-my-zsh-custom/*
+!.vim
+!.vim/after
+!.vim/after/ftplugin
+!.vim/after/ftplugin/*
+!.vim/vim-instant-markdown_chrome.applescript
