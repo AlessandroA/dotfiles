@@ -42,6 +42,11 @@ e () {
     fi
 }
 
+# clean vim temporary files
+rmsw () {
+    find . -name ".*.sw*" -delete
+}
+
 # ARMmbed virtual environment
 # the pydoc thingie fixes an error message on a non-existing alias
 alias varm="pydoc () { } && source $VIRTENVS_DIR/ARMmbed/bin/activate"
