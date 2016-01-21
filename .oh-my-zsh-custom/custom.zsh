@@ -53,9 +53,9 @@ alias vpers="pydoc () { } && source $VIRTENVS_DIR/personal/bin/activate"
 # go to some frequent places
 alias arm="cd ~/code/ARMmbed"
 alias ale="cd ~/code/AlessandroA"
-alias u="cd ~/code/uvisor"
-alias ulib="cd ~/code/uvisor-lib"
-alias uhw="cd ~/code/uvisor-helloworld"
+alias u="cd ~/code/ARMmbed/uvisor"
+alias ulib="cd ~/code/ARMmbed/uvisor-lib"
+alias uhw="cd ~/code/ARMmbed/uvisor-helloworld"
 
 ################################################################################
 # python and pip
