@@ -68,3 +68,18 @@ export PIP_REQUIRE_VIRTUALENV=true
 gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+
+################################################################################
+# vim
+################################################################################
+
+# redefine vim so that when plugins are not available they are installed
+vim() {
+    # we trust there will always be a vim-* namespaced plugin
+    if { ls $HOME/.vim/bundle/vim-* } > /dev/null 2>&1; then
+        command vim "$@"
+    else
+        command vim -u $HOME/.vim/bundle.vim +BundleInstall +qall
+        command vim "$@"
+    fi
+}

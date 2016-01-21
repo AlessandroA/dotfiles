@@ -13,3 +13,6 @@
 !.vim/after/ftplugin
 !.vim/after/ftplugin/*
 !.vim/vim-instant-markdown_chrome.applescript
+!.vim/bundle
+!.vim/bundle.vim
+!.vim/Vundle
