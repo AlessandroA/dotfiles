@@ -59,7 +59,17 @@ plugins=(git)
 # paths
 ################################################################################
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH=\
+"/usr/local/bin:"\
+"/usr/local/sbin:"\
+"/usr/bin:"\
+"/bin:"\
+"/usr/sbin:"\
+"/sbin:"\
+"/opt/X11/bin:"\
+"/usr/local/texlive/2015/bin/x86_64-darwin:"\
+$PATH
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 ################################################################################
