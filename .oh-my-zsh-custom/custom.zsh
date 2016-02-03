@@ -52,6 +52,11 @@ armclone () {
     git clone --recursive git@github.com:ARMmbed/$@.git ~/code/ARMmbed/$@
 }
 
+# count files in folder
+count () {
+    ls -1 $@ | wc -l
+}
+
 # ARMmbed virtual environment
 # the pydoc thingie fixes an error message on a non-existing alias
 alias varm="pydoc () { } && source $VIRTENVS_DIR/ARMmbed/bin/activate"
@@ -63,6 +68,11 @@ alias vper="pydoc () { } && source $VIRTENVS_DIR/personal/bin/activate"
 # experimental virtual environment
 # the pydoc thingie fixes an error message on a non-existing alias
 alias vexp="pydoc () { } && source $VIRTENVS_DIR/experimental/bin/activate"
+
+# activate whatever virtual environment, provided it is in the current folder
+# the pydoc thingie fixes an error message on a non-existing alias
+# Note: Unpredictable if there's more than one
+alias vhere="pydoc () { } && source ./*/bin/activate"
 
 # go to some frequent places
 alias arm="cd ~/code/ARMmbed"
