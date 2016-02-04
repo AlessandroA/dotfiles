@@ -121,7 +121,7 @@ set expandtab                           " tabs are spaces
 """ automatic text-wide word wrapping
 set textwidth=80                        " text width
 set formatoptions+=t                    " wrap word
-set colorcolumn=81                      " color text after textwidth
+set colorcolumn=81,121                  " color text after textwidth
 
 """ folding
 set foldmethod=indent                   " fold based on indentation
