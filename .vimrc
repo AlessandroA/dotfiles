@@ -30,7 +30,7 @@ let g:ctrlp_cmd = 'CtrlP'                           " default command
 let g_ctrlp_switch_buffer = 'E'                     " re-open existing buffers
 let g:ctrlp_tabpage_position = 'ac'                 " new tab after current
 let g:ctrlp_show_hidden = 1                         " always show hidden files
-let g:ctrlp_max_files=10000                         " may slow down a bit
+let g:ctrlp_max_files=1000                          " may slow down a bit
 
 """ ctrlp - working directory using version control or current/custom directory
 let g:ctrlp_working_path_mode = 'ra'                " current + version control
@@ -196,3 +196,5 @@ augroup reload_vimrc
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
                 \|if has('gui_running') | so $MYGVIMRC | endif
 augroup END
+
+filetype plugin on
