@@ -120,7 +120,7 @@ set expandtab                           " tabs are spaces
 
 """ automatic text-wide word wrapping
 set textwidth=80                        " text width
-set formatoptions=cqranblj              " text formatting options (see :help fo-table)
+set formatoptions=cqrnblj               " text formatting options (see :help fo-table)
 set colorcolumn=81,121                  " color text after textwidth
 
 """ folding
