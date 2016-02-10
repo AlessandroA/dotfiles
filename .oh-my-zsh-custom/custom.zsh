@@ -77,6 +77,7 @@ alias vhere="pydoc () { } && source ./*/bin/activate"
 # go to some frequent places
 alias arm="cd ~/code/ARMmbed"
 alias ale="cd ~/code/AlessandroA"
+alias gis="cd ~/code/gists"
 alias u="cd ~/code/ARMmbed/uvisor"
 alias ulib="cd ~/code/ARMmbed/uvisor-lib"
 alias uhw="cd ~/code/ARMmbed/uvisor-helloworld"
