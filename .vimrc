@@ -176,6 +176,12 @@ augroup END
 """ mouse interaction (may show unwanted behavior)
 set mouse=a                             " mouse can interact
 
+""" Automatically insert shebang in new scripts.
+augroup auto_shebang
+    autocmd BufNewFile *.sh 0put =\"#!/usr/bin/env bash\<nl>\<nl>\"|$
+    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl>\<nl>\"|$
+augroup END
+
 """ project-specific settings (may override default)
 function! ProjectSpecificSettings()
     let l:path = expand('%:p')
