@@ -1,5 +1,5 @@
 " Enable spell checking.
-set spelllang=en_gb spell
+setlocal spelllang=en_gb spell
 
 " Do not wrap words.
 setlocal formatoptions-=c

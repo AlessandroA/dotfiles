@@ -1,2 +1,2 @@
-" enable spell checking in LaTeX
-set spelllang=en_gb spell
+" Enable spell checking.
+setlocal spelllang=en_gb spell
