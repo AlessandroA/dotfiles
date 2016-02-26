@@ -78,10 +78,10 @@ alias vhere="pydoc () { } && source ./*/bin/activate"
 alias arm="cd ~/code/ARMmbed"
 alias ale="cd ~/code/AlessandroA"
 alias gis="cd ~/code/gists"
-alias u="cd ~/code/ARMmbed/uvisor"
-alias ulib="cd ~/code/ARMmbed/uvisor-lib"
-alias uhw="cd ~/code/ARMmbed/uvisor-helloworld"
-alias ult="cd ~/code/ARMmbed/uvisor-lib-tests"
+alias u="cd ~/code/AlessandroA/uvisor"
+alias ulib="cd ~/code/AlessandroA/uvisor-lib"
+alias uhw="cd ~/code/AlessandroA/uvisor-helloworld"
+alias ult="cd ~/code/AlessandroA/uvisor-lib-tests"
 
 ################################################################################
 # python and pip
