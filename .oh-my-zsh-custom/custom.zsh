@@ -57,6 +57,14 @@ count () {
     ls -1 $@ | wc -l
 }
 
+# grep within source files
+cgrep () {
+    grep -R \
+        --include="*.c" --include="*.h" --include="*.cpp" --include="*.hpp" \
+        --include="*.py" \
+        -E $1 .
+}
+
 # ARMmbed virtual environment
 # the pydoc thingie fixes an error message on a non-existing alias
 alias varm="pydoc () { } && source $VIRTENVS_DIR/ARMmbed/bin/activate"
