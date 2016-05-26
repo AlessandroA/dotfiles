@@ -47,9 +47,18 @@ rmsw () {
     find . -name ".*.sw*" -delete
 }
 
-# clone an ARMmbed repository
-armclone () {
-    git clone --recursive git@github.com:ARMmbed/$@.git ~/code/ARMmbed/$@
+# Clone a GitHub repository.
+gclone () {
+    git clone --recursive git@github.com:$1/$2.git
+}
+
+# Add GitHub remotes recursively to a repository.
+gremadd () {
+    # Get name of current repo.
+    repo=$(basename `git rev-parse --show-toplevel`)
+    for user in "$@" ; do
+        git remote add $user git@github.com:$user/$repo.git
+    done
 }
 
 # count files in folder
@@ -86,10 +95,10 @@ alias vhere="pydoc () { } && source ./*/bin/activate"
 alias arm="cd ~/code/ARMmbed"
 alias ale="cd ~/code/AlessandroA"
 alias gis="cd ~/code/gists"
-alias u="cd ~/code/AlessandroA/uvisor-lib/uvisor"
-alias ulib="cd ~/code/AlessandroA/uvisor-lib"
-alias uhw="cd ~/code/AlessandroA/uvisor-helloworld"
-alias ult="cd ~/code/AlessandroA/uvisor-lib-tests"
+alias u="cd ~/code/ARMmbed//uvisor"
+alias ulib="cd ~/code/ARMmbed/uvisor-lib"
+alias uhw="cd ~/code/ARMmbed/uvisor-helloworld"
+alias ult="cd ~/code/ARMmbed/uvisor-lib-tests"
 
 ################################################################################
 # python and pip
