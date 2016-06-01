@@ -144,6 +144,9 @@ set clipboard=unnamed                   " system wide clipboard
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
 
+""" Allow mouse integration past column 220.
+set ttymouse=sgr
+
 """ linearly increment a list of numbers in visual mode with Ctrl-a
 function! IncrementListLinearly()
   let a = line('.') - line("'<")
