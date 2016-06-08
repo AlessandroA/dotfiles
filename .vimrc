@@ -65,6 +65,7 @@ augroup END
 augroup vim_commentary_custom
     au!
     au FileType matlab set commentstring=%\ %s
+    au FileType cmake set commentstring=\#\ %s
 augroup END
 
 """ vim-geeknote - general settings
