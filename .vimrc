@@ -148,6 +148,10 @@ set list
 """ Allow mouse integration past column 220.
 set ttymouse=sgr
 
+""" Search the visually selected text in the current file.
+""" Usage: Select the text in visual mode, then press "//"
+vnoremap // y/<C-R>"<CR>
+
 """ linearly increment a list of numbers in visual mode with Ctrl-a
 function! IncrementListLinearly()
   let a = line('.') - line("'<")
