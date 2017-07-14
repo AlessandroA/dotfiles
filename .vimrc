@@ -166,7 +166,7 @@ vnoremap <C-a> :call IncrementListLinearly()<CR>
 """ always highlight keywords as TODO and FIXME
 augroup HiglightKeywords
     au!
-    au bufenter * :silent! call matchadd('Todo', 'TODO\|FIXME', -1)
+    au bufenter * :silent! call matchadd('InterestingWord1', 'TODO\|FIXME', -1)
 augroup END
 
 """ auto-detect file changes (not if in command line window)
