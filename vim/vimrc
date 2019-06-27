@@ -1,0 +1,148 @@
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+" - Make sure you use single quotes
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'                                       " Sensible setup
+Plug 'ctrlpvim/ctrlp.vim'                                       " Fuzzy file search
+Plug 'tpope/vim-fugitive'                                       " git wrapper
+Plug 'easymotion/vim-easymotion'                                " Move anywhere easily
+Plug 'airblade/vim-gitgutter'                                   " Show the git changes in the gutter
+Plug 'vim-syntastic/syntastic'                                  " Live syntax checking
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }   " Autocomplete
+Plug 'ntpeters/vim-better-whitespace'                           " Whitespace highlighting
+Plug 'scrooloose/nerdtree'                                      " File navigation
+Plug 'Xuyuanp/nerdtree-git-plugin'                              " git status in NERDTree
+Plug 'sjl/badwolf'                                              " Color scheme
+call plug#end()
+
+" Plugins configuration
+
+" vim-sensible
+" See https://github.com/tpope/vim-sensible for what it does.
+" Some options might be overridden below.
+
+" ctrlp
+let g:ctrlp_working_path_mode = 'ra' " Allow search in current dir or project root
+let g:ctrlp_show_hidden = 1
+
+" vim-fugitive
+" TODO
+
+" vim-easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1 " Case insensitive
+let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj' " Avoid special characters
+" Jump anywhere with 2 characters
+nmap <Space> <Plug>(easymotion-bd-w)
+" Jump to a word starting with {char1}{char2}
+nmap s <Plug>(easymotion-overwin-f)
+
+" vim-gitgutter
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+" syntastic
+" TODO
+
+" YouCompleteMe
+" TODO
+
+" vim-better-whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
+let g:strip_whitelines_at_eof=1
+let g:strip_only_modified_lines=1
+let g:show_spaces_that_precede_tabs=1
+
+" nerdtree
+" Always open NERDTree and ensure the cursor is in the editing area, if opened
+" with one file.
+augroup nerd_tree_open
+    au!
+    au StdinReadPre * let s:std_in=1
+    au VimEnter * NERDTreeToggle
+    if !(argc() == 0 && !exists("s:std_in"))
+        au VimEnter * wincmd l
+        au VimEnter * EnableWhitespace " FIXME: Quirk of vim-better-whitespace
+    endif
+augroup END
+function! NERDTreeCloseAll()
+    if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree())
+        q
+    endif
+endfunction
+augroup nerd_tree_close
+    au!
+    au BufEnter * call NERDTreeCloseAll()
+augroup END
+
+" nerdtree-git-plugin
+" TODO
+
+" vim general configuration
+
+" Color scheme
+set t_Co=256
+try
+    colorscheme badwolf
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme elflord " Fall-back
+endtry
+
+" Syntax highlighting
+syntax on
+
+" The mouse can interact.
+set mouse=a
+set ttymouse=sgr " This allows mouse integration past column 220.
+
+" Track updates every 100ms.
+set updatetime=100
+
+" Show the line number.
+set number
+
+" Highlight the current cursor line.
+set cursorline
+
+" Show the column number
+set ruler
+
+" Tabs
+set shiftwidth=4 " Shift width
+set tabstop=4 " Tab width
+set softtabstop=4 " Tab width in insert mode
+set expandtab " Tabs are spaces
+
+" Search in file
+set incsearch " Start searching while you type
+set hlsearch " Highlight matches
+set smartcase  " Case(-smartly)-insensitive search
+
+" Highlight matching parentheses.
+set showmatch
+
+" Show special characters.
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
+
+" Show column markers.
+set colorcolumn=81,121
+
+" Set highlight colors for TODO and FIXME,
+augroup highlight_keywords
+    au!
+    au BufEnter * :silent! call matchadd('InterestingWord1', 'TODO\|FIXME', -1)
+augroup END
+
+" reload .vimrc in a running vim instance everytime it is changed
+" Note: The new .vimrc file applies *on top* of the previous one.
+augroup reload_vimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | redraw
+augroup END
+
+" Detect the filetype and load its plugin and indent file, if present.
+filetype plugin indent on
