@@ -1,18 +1,2 @@
-# ignore everything
-*
-
-# except for
-!.gitignore
-!.gitconfig
-!.vimrc
-!.zshrc
-!.oh-my-zsh-custom
-!.oh-my-zsh-custom/*
-!.vim
-!.vim/after
-!.vim/after/ftplugin
-!.vim/after/ftplugin/*
-!.vim/vim-instant-markdown_chrome.applescript
-!.vim/bundle
-!.vim/bundle.vim
-!.vim/Vundle
+# Vim files
+.*.sw*
