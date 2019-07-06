@@ -1,0 +1,3 @@
+* Create custom format files for types (html, js, etc) in vim.
+* Create install.sh script for zsh and oh-my-zsh.
+* Create at least list of things to install on a new machine (macOS specific for now).
