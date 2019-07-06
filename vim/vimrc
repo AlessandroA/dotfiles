@@ -24,6 +24,7 @@ call plug#end()
 " ctrlp
 let g:ctrlp_working_path_mode = 'ra' " Allow search in current dir or project root
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " vim-fugitive
 " TODO
