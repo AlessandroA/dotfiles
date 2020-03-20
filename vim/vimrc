@@ -64,7 +64,7 @@ let g:show_spaces_that_precede_tabs=1
 augroup nerd_tree_open
     au!
     au StdinReadPre * let s:std_in=1
-    au VimEnter * NERDTreeToggle
+        au VimEnter * if exists("g:NERDTree") | NERDTreeToggle | endif
     if !(argc() == 0 && !exists("s:std_in"))
         au VimEnter * wincmd l
         au VimEnter * EnableWhitespace " FIXME: Quirk of vim-better-whitespace
