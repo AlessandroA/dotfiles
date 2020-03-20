@@ -33,4 +33,4 @@ curl -fLo $VIMDIR/autoload/plug.vim --create-dirs \
 ln -s $SCRIPTPATH/vimrc $VIMRC
 
 # Install/Update all plugins.
-vim +PlugUpdate
+vim +PlugUpdate > /dev/null
