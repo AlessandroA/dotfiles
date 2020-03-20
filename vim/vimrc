@@ -8,7 +8,7 @@ Plug 'tpope/vim-fugitive'                                       " git wrapper
 Plug 'easymotion/vim-easymotion'                                " Move anywhere easily
 Plug 'airblade/vim-gitgutter'                                   " Show the git changes in the gutter
 Plug 'vim-syntastic/syntastic'                                  " Live syntax checking
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }   " Autocomplete
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --clangd-completer --ts-completer'} " Autocomplete
 Plug 'ntpeters/vim-better-whitespace'                           " Whitespace highlighting
 Plug 'scrooloose/nerdtree'                                      " File navigation
 Plug 'Xuyuanp/nerdtree-git-plugin'                              " git status in NERDTree
